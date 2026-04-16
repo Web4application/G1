@@ -1,6 +1,5 @@
 import joblib
 
-
 classifier = joblib.load('survive_prediction.pkl')
 print("Enter the following details to make the predictions:- n")
 
