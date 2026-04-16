@@ -1,4 +1,7 @@
-import joblib
+``pythonx``
+  
+```py
+import joblib 
 
 classifier = joblib.load('survive_prediction.pkl')
 print("Enter the following details to make the predictions:- n")
@@ -17,7 +20,7 @@ print("Not Survived.")
 else ;
 
 print("Survived")
-
+```
 .. _performance-howto:
 
 =========================
@@ -27,7 +30,7 @@ How to optimize for speed
 The following gives some practical guidelines to help you write efficient
 code for the scikit-learn project.
 
-.. note::
+.. _note::
 
   While it is always useful to profile your code so as to **check
   performance assumptions**, it is also highly recommended
