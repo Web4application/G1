@@ -1,8 +1,8 @@
 🤖 V8 — REAL ROBOTICS STACK (ROS2 + NAV2 + RTAB-MAP)
 
-This is the structure you’re converging toward:
+# This is the structure you’re converging toward:
 
-ROS2 Robot Brain
+:ROS2 Robot Brain:
 ├── Sensors
 │   ├── Camera (RGB)
 │   ├── Depth (RealSense / LiDAR)
@@ -31,9 +31,9 @@ ROS2 Robot Brain
 
 ⸻
 
-🧭 1. REAL ROS2 PACKAGE STRUCTURE (THIS IS IMPORTANT)
+# 🧭 1. REAL ROS2 PACKAGE STRUCTURE (THIS IS IMPORTANT)
 
-You MUST restructure your repo like this:
+:You MUST restructure your repo like this:
 
 ros2_ws/
 ├── src/
@@ -49,7 +49,7 @@ Each folder = ROS2 package (ament_python)
 ⸻
 
 📦 2. REAL NAV2 LAUNCH SYSTEM (CORE OF AUTONOMY)
-
+```python
 nav2_bridge/launch/nav2_launch.py
 
 from launch import LaunchDescription
@@ -79,15 +79,15 @@ def generate_launch_description():
             name='local_costmap'
         )
     ])
-
-This is your navigation brain engine.
+```
+>This is your navigation brain engine.
 
 ⸻
 
-🗺️ 3. REAL RTAB-MAP SLAM NODE
+# 🗺️ 3. REAL RTAB-MAP SLAM NODE
 
-slam_rtabmap/rtabmap_node.py
-
+>slam_rtabmap/rtabmap_node.py
+```py
 import rclpy
 from rclpy.node import Node
 
@@ -100,6 +100,7 @@ class RTABMapNode(Node):
     def process_sensor_data(self, rgb, depth):
         # In real system, this connects to RTAB-Map ROS package
         pass
+```
 
 👉 In real deployment you will replace this with:
 	•	rtabmap_ros package
@@ -109,7 +110,7 @@ class RTABMapNode(Node):
 ⸻
 
 📡 4. TF TREE (REAL ROBOT SPATIAL FRAMEWORK)
-
+```py
 sensor_fusion/tf_tree.py
 
 import rclpy
@@ -124,6 +125,8 @@ class TFManager:
     def get_transform(self, parent, child):
         return self.transforms.get((parent, child))
 
+```
+
 👉 In real ROS2 this becomes:
 	•	tf2_ros
 	•	broadcasting transforms continuously
@@ -131,7 +134,7 @@ class TFManager:
 ⸻
 
 🧠 5. YOUR AI BRAIN NODE (CORE INTELLIGENCE)
-
+```py
 ai_brain/brain_node.py
 
 import rclpy
@@ -161,7 +164,7 @@ class BrainNode(Node):
         out.data = action
 
         self.pub.publish(out)
-
+```
 This is where:
 	•	DQN
 	•	GPT fallback
@@ -172,7 +175,7 @@ all plug into ROS2.
 ⸻
 
 🤖 6. REAL MOTOR CONTROL NODE
-
+```py
 robot_control/motor_node.py
 
 import rclpy
@@ -202,12 +205,12 @@ class MotorNode(Node):
         else:
             self.get_logger().info("Motor: stop")
 
-
+```
 ⸻
 
 🧠 7. FULL SYSTEM FLOW (REAL ROBOT BEHAVIOR)
 
-Now your system runs like this:
+:Now your system runs like this:
 
 Camera/LiDAR
    ↓
