@@ -1,6 +1,7 @@
-🤖 V8 — REAL ROBOTICS STACK (ROS2 + NAV2 + RTAB-MAP)
 
-# This is the structure you’re converging toward:
+:🤖 V8 — REAL ROBOTICS STACK (ROS2 + NAV2 + RTAB-MAP):
+
+:This is the structure you’re converging toward:
 
 :ROS2 Robot Brain:
 ├── Sensors
@@ -27,11 +28,11 @@
 │
 └── Actuation
     ├── Motor controller node
-
+:
 
 ⸻
 
-# 🧭 1. REAL ROS2 PACKAGE STRUCTURE (THIS IS IMPORTANT)
+.. 🧭 1. REAL ROS2 PACKAGE STRUCTURE (THIS IS IMPORTANT):
 
 :You MUST restructure your repo like this:
 
@@ -48,7 +49,8 @@ Each folder = ROS2 package (ament_python)
 
 ⸻
 
-📦 2. REAL NAV2 LAUNCH SYSTEM (CORE OF AUTONOMY)
+:📦 2. REAL NAV2 LAUNCH SYSTEM (CORE OF AUTONOMY):
+
 ```python
 nav2_bridge/launch/nav2_launch.py
 
@@ -84,7 +86,7 @@ def generate_launch_description():
 
 ⸻
 
-# 🗺️ 3. REAL RTAB-MAP SLAM NODE
+: 🗺️ 3. REAL RTAB-MAP SLAM NODE::
 
 >slam_rtabmap/rtabmap_node.py
 ```py
